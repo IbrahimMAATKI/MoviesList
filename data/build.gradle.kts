@@ -28,22 +28,36 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
 
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
 dependencies {
+    implementation(project(":domain"))
+
     implementation(AndroidX.coreKtx)
     implementation(Hilt.android)
     kapt(Hilt.compiler)
 
+    implementation(Moshi.core)
+    implementation(Moshi.kotlin)
+    kapt(Moshi.codegen)
+
     implementation(Room.runtime)
+    implementation(Room.ktx)
     kapt(Room.annotationProcessor)
     annotationProcessor(Room.annotationProcessor)
 
     coreLibraryDesugaring(Desugaring.coreLibraryDesugaring)
+
+    implementation(Ktor.core)
+    implementation(Ktor.cio)
+    implementation(Ktor.clientSerialization)
+    implementation(Ktor.android)
+    implementation(Ktor.json)
+    implementation(Ktor.logging)
 }

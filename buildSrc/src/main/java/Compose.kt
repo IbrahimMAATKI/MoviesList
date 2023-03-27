@@ -8,7 +8,8 @@ object Compose {
     const val material = "androidx.compose.material:material:$composeVersion"
     const val tooling = "androidx.compose.ui:ui-tooling:$composeVersion"
 
-    private const val navigationVersion = "2.5.3"
+
+    const val navigationVersion = "2.5.3"
     const val navigation = "androidx.navigation:navigation-compose:$navigationVersion"
 
     const val compose_icon = "androidx.compose.material:material-icons-extended:$composeVersion"

@@ -2,6 +2,7 @@ package com.example.data.db.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.data.db.room.dao.MoviesDao
 import com.example.data.db.room.models.MovieDataEntity
 
 @Database(
